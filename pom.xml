@@ -7,9 +7,14 @@
     <packaging>war</packaging>
     <name>CAS Example Java Web App</name>
     <description>A sample web application that exercises the CAS protocol features via the Java CAS Client.</description>
+    <properties>
+    	<context.path>/sample</context.path>
+    </properties>
     <build>
-        <finalName>cas-sample-java-webapp</finalName>
-        <plugins>
+    	
+        <finalName>sample</finalName>
+        
+         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -32,7 +37,7 @@
                         </systemProperty>
                     </systemProperties>
                     <webApp>
-                        <contextPath>/sample</contextPath>
+                        <contextPath>${context.path}</contextPath>
                         <overrideDescriptor>${basedir}/etc/jetty/web.xml</overrideDescriptor>
                     </webApp>
                     <jvmArgs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5002,server=y,suspend=n</jvmArgs>
@@ -42,7 +47,7 @@
     </build>
 
     <dependencies>
-
+    
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>

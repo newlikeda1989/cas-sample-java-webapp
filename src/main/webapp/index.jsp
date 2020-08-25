@@ -1,5 +1,4 @@
-<%@page contentType="text/html" %>
-<%@page pageEncoding="UTF-8" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>

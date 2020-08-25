@@ -14,6 +14,15 @@ the application server in the [`web.xml`](https://github.com/UniconLabs/cas-samp
 * Import your server certificate inside this keystore.
 
 ```bash
+
+生成证书
+keytool -exportcert -alias jetty -keystore C:\etc\cas\jetty\thekeystore  -file C:/etc/cas/jetty/jetty.cer -rfc
+
+导入cacerts证书库
+C:\Program Files\Java\jdk1.8.0_172\jre\bin>keytool -importcert -file C:\etc\cas\jetty\jetty.cer -alias jetty -keystore ..\lib\security\cacerts
+
+
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_172
 mvn clean package jetty:run-forked
 ```
 
@@ -23,7 +32,7 @@ http://localhost:9080/sample
 ```
 and
 ```bash
-https://localhost:9443/sample
+https://jason.xgate.com:9443/sample
 ```
 
  
